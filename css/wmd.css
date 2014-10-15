@@ -28,6 +28,7 @@ div.wmd-preview
     position: absolute;
     padding: 2px;
     border: 1px solid rgb(169, 169, 169);
+    overflow:auto;
 }
 
 .wmd-preview code, .editor-preview pre, .editor-preview kbd {
