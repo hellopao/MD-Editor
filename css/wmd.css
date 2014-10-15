@@ -26,9 +26,9 @@ div.wmd-preview
     margin: 0 5px;
     width: 50%;
     position: absolute;
-    padding: 2px;
     border: 1px solid rgb(169, 169, 169);
     overflow:auto;
+    background: #fff;
 }
 
 .wmd-preview code, .editor-preview pre, .editor-preview kbd {
@@ -172,7 +172,7 @@ textarea.wmd-fieldinput
 	float: left;
 	width: 20px;
 	height: 20px;
-	background: #FFF url(../img/toolbar.png) no-repeat;
+	background: #FFF url(../images/toolbar.png) no-repeat;
     background-size: 380px 60px;
 	border: solid 4px #FFF;
 }
