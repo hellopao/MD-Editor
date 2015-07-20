@@ -1,24 +1,48 @@
 <!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<html lang="en">
 <head>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-	<title>WMD Test Page</title>
-	<link type="text/css" rel="stylesheet" href="css/wmd.css"/>
-	<script type="text/javascript" src="js/editor.js"></script>
-	<style type="text/css">
-	</style>
-	<script type="text/javascript">
-		var wmd;
-		window.onload = function() {
-			wmd = new WMD("wmd-input", "wmd-toolbar", {preview: "preview"});
-		};
-	</script>
+    <meta charset="UTF-8">
+    <title>MarkDown Editor</title>
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="scripts/vendors/highlightjs/styles/monokai.css">
 </head>
-<body style="position:relative">
-	<h1>WMD Test Page</h1>
-	
-	<div id="wmd-toolbar" class="wmd-toolbar"></div>
-	<textarea id="wmd-input" class="wmd-input"></textarea>
-    <div id="preview" class="wmd-preview"> </div>
+<body ng-controller="EditorController">
+    <header class="header">
+        <nav class="fr mr_10">
+            <a href="javascript:;" ng-click="save()">save</a>
+        </nav>
+    </header>
+    <section class="container">
+        <section class="content {{hidePreview ? '':'half'}} fl fill" ng-show="!hideContent">
+            <section class="editor-options">
+                <ul>
+                    <li ng-show="!hidePreview">
+                        <a href="javascript:;" ng-click="hidePreview = true;"><i class="iconfont i-fanhui6"></i></a>
+                    </li>
+                    <li ng-show="hidePreview">
+                        <a href="javascript:;" ng-click="hidePreview = false;"><i class="iconfont i-fanhui5"></i></a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" ng-click="showMdSyntax()"><i class="iconfont i-jingshi"></i></a>
+                    </li>
+                </ul>
+            </section>
+            <div editor-box name="name" class="editor-box fill" placeholder="markdown" ng-model="contentText"></div>
+        </section>
+        <section class="preview {{hideContent ? '':'half'}} fr fill" ng-show="!hidePreview">
+            <section class="editor-options">
+                <ul>
+                    <li ng-show="!hideContent">
+                        <a href="javascript:;" ng-click="hideContent = true;"><i class="iconfont i-fanhui5"></i></a>
+                    </li>
+                    <li ng-show="hideContent">
+                        <a href="javascript:;" ng-click="hideContent = false;"><i class="iconfont i-fanhui6"></i></a>
+                    </li>
+                </ul>
+            </section>
+            <section class="preview-box fill markdown" ng-bind-html="previewHTML"></section>
+        </section>
+    </section>
+    <script src="scripts/vendors/requirejs/require.js" data-main="scripts/index.js"></script>
 </body>
+</html>

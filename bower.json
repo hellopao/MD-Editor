@@ -1,0 +1,24 @@
+{
+  "name": "markdown-editor",
+  "version": "0.0.0",
+  "authors": [
+    "qinjia <qinjia@outlook.com>"
+  ],
+  "description": "a markdown-editor",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "scripts/vendors",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "marked": "~0.3.3",
+    "highlightjs": "~8.6.0",
+    "angular": "~1.4.3",
+    "requirejs": "~2.1.19",
+    "tabIndent.js": "https://github.com/julianlam/tabIndent.js.git"
+  }
+}
